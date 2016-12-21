@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="tp01.com.example.work.explorer.FileAdapter" >
+
+    <item
+        android:id="@+id/create_rep"
+        android:title="Create directory">
+    </item>
+    <!--android:showAsAction="never"-->
+    <item android:id="@+id/create_file" android:title="Create file">
+
+    </item>
+
+</menu>
