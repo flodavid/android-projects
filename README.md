@@ -1,3 +1,5 @@
+<img alt="Android logo" src="https://material.io/guidelines/static/images/callouts/android.svg" height="280">
+
 # My android projects
 I regrouped some of my android projects in this repository, they are free to use.
 
