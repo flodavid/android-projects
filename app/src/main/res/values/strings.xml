@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Chevaux</string>
+    <string name="alert_new_race">Nouvelle course</string>
+    <string name="nb_horses">Nombre de chevaux :</string>
+    <string name="race_distance">Distance de la course :</string>
+</resources>
