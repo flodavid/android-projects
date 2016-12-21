@@ -1,4 +1,4 @@
-package cc.com.example.work.chevaux;
+package cc.com.example.work.horses;
 
 /**
  * Classe représentant un cheval, par DAVID Florian
