@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Set;
@@ -31,7 +32,6 @@ public class BluetoothFragment extends ListFragment {
 
     @Override
     public void onStart() {
-
         btReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -99,6 +99,9 @@ public class BluetoothFragment extends ListFragment {
 
         // Adds all previously paired devices to the list
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if(bluetoothAdapter == null) {
+            Log.d("BluetoothM_onCreate", "bluetoothAdapter null, pas de bluetooth sur l'appareil");
+        }
 
         getPairedDevices();
 
@@ -110,8 +113,17 @@ public class BluetoothFragment extends ListFragment {
 
         setListAdapter(adapter);
 
+        View view = inflater.inflate(R.layout.fragment_bluetooth, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bluetooth, container, false);
+
+        TextView bluetoothState= (TextView)view.findViewById(R.id.bluetooth_state);
+        if (bluetoothAdapter == null) {
+            bluetoothState.setText("L'appareil ne dispose pas du bluetooth");
+        } else if (bluetoothAdapter.getState() != BluetoothAdapter.STATE_ON) {
+            bluetoothState.setText("Le bluetooth n'est pas activé sur l'appareil");
+        }
+
+        return view;
     }
 
     public void getPairedDevices() {
@@ -123,12 +135,17 @@ public class BluetoothFragment extends ListFragment {
                     Log.v("Bluetooth_Fragment","onStart//Paired device : "+device.getName()+" "+
                             device.getBluetoothClass().getDeviceClass());
                 }
+            } else {
+                TextView bluetoothState= (TextView)getView().findViewById(R.id.bluetooth_state);
+                bluetoothState.setText("Aucun ancien périphérique trouvé");
             }
         }
     }
 
     public void refreshBtDevices() {
         adapter.clear();
+        TextView bluetoothState= (TextView)getView().findViewById(R.id.bluetooth_state);
+        bluetoothState.setText("Recherche des périphériques bluetooth");
         getPairedDevices();
         if (!bluetoothAdapter.isDiscovering()) {
             bluetoothAdapter.startDiscovery();
