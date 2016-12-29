@@ -13,6 +13,6 @@
         android:id="@+id/horse_progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal" />
+        style="?android:attr/progressBarStyleHorizontal" />
 
 </LinearLayout>

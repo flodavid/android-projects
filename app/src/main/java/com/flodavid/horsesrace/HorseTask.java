@@ -1,4 +1,4 @@
-package cc.com.example.work.horses;
+package com.flodavid.horsesrace;
 
 /**
  * AsyncTask d'un cheval, par DAVID Florian

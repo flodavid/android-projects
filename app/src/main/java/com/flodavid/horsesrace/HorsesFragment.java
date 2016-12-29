@@ -1,4 +1,4 @@
-package cc.com.example.work.horses;
+package com.flodavid.horsesrace;
 
 import android.app.Activity;
 import android.app.Fragment;

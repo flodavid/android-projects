@@ -1,4 +1,4 @@
-package cc.com.example.work.horses;
+package com.flodavid.horsesrace;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("cc.com.example.work.chevaux", appContext.getPackageName());
+        assertEquals("com.flodavid.horsesrace", appContext.getPackageName());
     }
 }

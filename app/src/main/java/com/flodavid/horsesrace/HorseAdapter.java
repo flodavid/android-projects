@@ -1,4 +1,4 @@
-package cc.com.example.work.horses;
+package com.flodavid.horsesrace;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -35,7 +35,7 @@ public class HorseAdapter extends ArrayAdapter<Horse> {
         ImageView horseImage = (ImageView) convertView.findViewById(R.id.horse_image);
         ProgressBar horseProgress = (ProgressBar) convertView.findViewById(R.id.horse_progress);
 
-        horseImage.setImageResource(R.drawable.image_cheval);
+        horseImage.setImageResource(R.drawable.horse_picture);
         horseProgress.setProgress(item.getProgress());
         if (item.getNb_boost_step() > 0) {
             horseProgress.setBackgroundColor(Color.RED);
