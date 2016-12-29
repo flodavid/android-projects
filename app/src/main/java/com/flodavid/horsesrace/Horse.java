@@ -1,4 +1,4 @@
-package cc.com.example.work.horses;
+package com.flodavid.horsesrace;
 
 /**
  * Classe représentant un cheval, par DAVID Florian

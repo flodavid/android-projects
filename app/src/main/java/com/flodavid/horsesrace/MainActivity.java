@@ -1,4 +1,4 @@
-package cc.com.example.work.horses;
+package com.flodavid.horsesrace;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
